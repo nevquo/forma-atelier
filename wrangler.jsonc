@@ -3,6 +3,24 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
-  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"], "not_found_handling": "404-page" },
-  "vars": { "FORM_ENABLED": "false", "TURNSTILE_SITE_KEY": "" }
+
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+    "not_found_handling": "404-page"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "forma-inquiries-v2",
+      "database_id": "d6a6edd1-5012-480e-8bb5-b2ed9d707ed5"
+    }
+  ],
+
+  "vars": {
+    "FORM_ENABLED": "true",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFIyk1jRz4uClrQi"
+  }
 }
