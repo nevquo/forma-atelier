@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://forma-atelier.nevquo.workers.dev/sitemap.xml

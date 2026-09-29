@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readdir,readFile,access} from 'node:fs/promises';import path from 'node:path';
+const root=path.resolve('public');
+test('all pages have one H1 and local linked assets/pages exist',async()=>{let count=0;for(const file of await readdir(root)){if(!file.endsWith('.html'))continue;count++;const html=await readFile(path.join(root,file),'utf8');assert.equal((html.match(/<h1[ >]/g)||[]).length,1,file);for(const [,link] of html.matchAll(/(?:src|href)="([^"]+)"/g)){if(/^(https?:|mailto:|#)/.test(link))continue;await access(path.join(root,link.replace(/^\//,'')))}}assert.equal(count,13)});

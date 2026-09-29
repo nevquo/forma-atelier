@@ -1,0 +1,8 @@
+{
+  "name": "forma-atelier",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"], "not_found_handling": "404-page" },
+  "vars": { "FORM_ENABLED": "false", "TURNSTILE_SITE_KEY": "" }
+}
